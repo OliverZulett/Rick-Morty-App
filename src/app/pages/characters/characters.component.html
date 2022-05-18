@@ -8,10 +8,12 @@
             <div class="badge badge-accent">{{character?.status}}</div>
           </ng-container>
           <ng-container card-body>
-            <p>Location: {{character?.location?.name}}<br> 
-            Origin: {{character?.origin?.name}}<br> 
-            Type: {{character?.type}}<br> 
-            Created: {{character?.created | date}}</p> 
+            <p>
+              <span class="uppercase font-semibold">Location: </span>{{character?.location?.name}}<br> 
+              <span class="uppercase font-semibold">Origin: </span>{{character?.origin?.name}}<br> 
+              <span class="uppercase font-semibold">Type: </span>{{character?.type}}<br> 
+              <span class="uppercase font-semibold">Created: </span>{{character?.created | date}}
+            </p> 
           </ng-container>
           <ng-container card-footer>
             <div class="badge badge-primary">{{character?.gender}}</div>
