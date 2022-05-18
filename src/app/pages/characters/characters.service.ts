@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { RickAndMortyApiService } from '../../services/rick-and-morty-api.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class RickAndMortyApiService {
-  private API_URL = 'https://rickandmortyapi.com/api/'
+export class CharactersService {
+  private API_URL = 'https://rickandmortyapi.com/api/character'
 
   constructor(
     private httpClient: HttpClient
   ) { }
 
-  getRequest(path: string) {
+  getCharacters() {
     return this.httpClient.get(this.API_URL);
   }
 }
