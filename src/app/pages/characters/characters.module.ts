@@ -7,21 +7,18 @@ import { GridContainerModule } from '../../components/grid-container/grid-contai
 import { CardModule } from '../../components/card/card.module';
 import { CharactersService } from './characters.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NavigationModule } from '../../components/navigation/navigation.module';
 
 @NgModule({
-  declarations: [
-    CharactersComponent
-  ],
+  declarations: [CharactersComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     CharactersRoutingModule,
     GridContainerModule,
-    CardModule
+    CardModule,
+    NavigationModule,
   ],
-  providers: [
-    CharactersService
-  ]
+  providers: [CharactersService],
 })
-export class CharactersModule { }
+export class CharactersModule {}
