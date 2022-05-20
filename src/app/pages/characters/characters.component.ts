@@ -4,7 +4,7 @@ import { CharactersService } from './characters.service';
 import { Character } from './character.interface';
 import { selectCharacters } from '../../ngrx/selectors/character.selectors';
 import { Store } from '@ngrx/store';
-import { retrievedCharacterList } from '../../ngrx/actions/character.actions';
+import { removeCharacter, retrievedCharacterList } from '../../ngrx/actions/character.actions';
 
 @Component({
   selector: 'app-characters',
@@ -31,6 +31,11 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  removeCharacter(characterId: number) {
+    console.log(characterId);
+    this.store.dispatch(removeCharacter({characterId}))
   }
 
   // private getCharacters() {

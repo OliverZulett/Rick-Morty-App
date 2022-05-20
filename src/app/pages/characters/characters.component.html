@@ -16,8 +16,18 @@
             </p> 
           </ng-container>
           <ng-container card-footer>
-            <div class="badge badge-primary">{{character?.gender}}</div>
-            <div class="badge badge-secondary">{{character?.species}}</div>
+            <div>
+              <div>
+                <div class="badge badge-primary">{{character?.gender}}</div>
+                <div class="badge badge-secondary">{{character?.species}}</div>
+              </div>
+              <div>
+                <button 
+                  (click)="removeCharacter(character.id)" 
+                  class="btn btn-sm btn-secondary"
+                >Clear Results</button>
+              </div>
+            </div>
           </ng-container>
         </app-card>
       </div>

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { RickAndMortyApiService } from '../../services/rick-and-morty-api.service';
 import { HttpClient } from '@angular/common/http';
 import { pipe, map } from 'rxjs';
 
@@ -13,6 +12,9 @@ export class CharactersService {
 
   getCharacters() {
     return this.httpClient.get(this.API_URL)
-      .pipe(map((apiResponse: any) => apiResponse.results));
+      .pipe(map((apiResponse: any) => {
+        console.log(apiResponse);
+        return apiResponse.results;
+      }));
   }
 }

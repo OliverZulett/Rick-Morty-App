@@ -5,6 +5,10 @@ export const retrievedCharacterList  = createAction(
   '[Rick & Morty/API] Retrieve Characters Success',
   props<{ characters: ReadonlyArray<Character> }>()
 );
+export const removeCharacter  = createAction(
+  '[Character] Remove Character',
+  props<{ characterId: number }>()
+);
 export const clearCharacters = createAction(
-  '[Character Component], ClearCharacters'
+  '[Character], Clear Characters'
 );
