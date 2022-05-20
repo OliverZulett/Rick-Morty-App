@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { FooterModule } from './components/footer/footer.module';
+import { StoreModule } from '@ngrx/store';
+import { characterReducer } from './ngrx/reducers/character.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,10 @@ import { FooterModule } from './components/footer/footer.module';
     BrowserModule,
     AppRoutingModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
+    StoreModule.forRoot({
+      characters: characterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
