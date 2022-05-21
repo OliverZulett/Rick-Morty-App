@@ -11,12 +11,19 @@
           <li><a>Episodes</a></li> -->
         </ul>
       </div>
+      <button 
+        *ngIf="(characters$ | async)?.length !== 0"
+        (click)="clearCharacters()"
+        class="btn btn-small btn-primary"
+      >
+        Clear Characters
+      </button>
     </div>
     <div class="navbar-center">
       <a class="btn btn-ghost normal-case text-xl">Rick & Morty App</a>
     </div>
     <div class="navbar-end">
-      <p class="mx-3"><span class="uppercase font-semibold">Characters: </span> ?</p>
+      <p class="mx-3"><span class="uppercase font-semibold">Characters: </span> {{(characters$ | async)?.length}}</p>
     </div>
   </div>
 </div>
